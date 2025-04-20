@@ -30,6 +30,7 @@ async def main():
     )
     start_op = WithStartWorkflowOperation(
         workflow_1.MyWorkflow.run,
+        workflow_1.MyInput(name="test"),
         id=WORKFLOW_ID,
         task_queue=TASK_QUEUE,
         id_conflict_policy=WorkflowIDConflictPolicy.FAIL,
